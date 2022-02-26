@@ -45,7 +45,7 @@ export default function SymbolTable(){
     <>
     <h1>I am rich!</h1>
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500 }} aria-label="customized table">
+      <Table sx={{ minWidth: 200 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Symbol</StyledTableCell>
