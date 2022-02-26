@@ -14,8 +14,6 @@ export const config = {
     }
 };
 
-console.log('resolvers,', resolvers)
-
 // export default apolloServer.start().then(() => apolloServer.createHandler({ path:  "/api/graphql"  }));
 export default cors(async function handler(req, res) {
     if (req.method === 'OPTIONS') {
