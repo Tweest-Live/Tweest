@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
 const Home: NextPage = ({ stocks }: any) => {
+  console.log('stocksdata',stocks)
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +15,8 @@ const Home: NextPage = ({ stocks }: any) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>{JSON.stringify(stocks)}</main>
+      {/* <main className={styles.main}>{JSON.stringify(stocks)}</main> */}
+      <p>{stocks.data.getStocks[0].symbol}</p>
     </div>
   );
 };
