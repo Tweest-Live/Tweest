@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -59,8 +60,9 @@ export default function SymbolTable(){
           {rows.map((row) => (
             <StyledTableRow key={row.symbol}>
               <StyledTableCell component="th" scope="row">
-                
-                <a href="#" style={{cursor: 'pointer'}}>{row.symbol}</a>
+                  <Link href={{ pathname: '/stock/', query: { symbol: row.symbol }}}>
+                    {row.symbol}
+                  </Link>
               </StyledTableCell>
               <StyledTableCell align="left">{row.price}</StyledTableCell>
               <StyledTableCell align="left">{row.a}</StyledTableCell>
