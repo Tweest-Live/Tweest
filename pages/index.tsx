@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import SymbolTable from '../components/symbolTable'
 import Navbar from '../components/Navbar'
-import GuageChart from '../components/guageChart'
+import GuageChart from '../components/gaugeChart'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
