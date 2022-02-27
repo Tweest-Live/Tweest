@@ -29,31 +29,59 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
   
-  function createData(symbol:string, price:number, a:number, b:number, c:number) {
-    return { symbol, price, a,b,c };
+  
+  
+ 
+
+export default function SymbolTable({stocks}:any){
+  
+  const aapl=stocks.data.getStocks[2];
+  const msft=stocks.data.getStocks[0];
+  const amzn=stocks.data.getStocks[4];
+  const fb=stocks.data.getStocks[3];
+  const goog=stocks.data.getStocks[1];
+  console.log('fb',fb)
+  
+  function createData(symbol:string, price:number, change:number, prev:number) {
+    
+    return { symbol, price, change,prev };
   }
+  function changes(symbol:any){
+    let change:number=(symbol.close[fb.close.length-2]-symbol.close[fb.close.length-1])/symbol.close[fb.close.length-1];
+    change = Number(change.toFixed(2))
+    return change
+  }
+
+  function rowData(symbol:any){
+    const obj:any={}
+    obj.price = symbol.close.slice(-1);
+    obj.change = ((symbol.close[fb.close.length-2]-symbol.close[fb.close.length-1])/symbol.close[fb.close.length-1]).toFixed(2);
+    obj.prev = symbol.close[fb.close.length-2]; 
+
+    return obj;
+  }
+
   //tickers' data
   const rows = [
-    createData('AAPL', 159, 6.0, 24, 4.0),
-    createData('MSFT', 237, 9.0, 37, 4.3),
-    createData('AMZN', 262, 16.0, 24, 6.0),
-    createData('FB', 305, 3.7, 67, 4.3),
-    createData('GOOG', 356, 16.0, 49, 3.9),
+    createData('AAPL',rowData(aapl).price, rowData(aapl).change, rowData(aapl).prev),
+    createData('MSFT', rowData(msft).price, rowData(msft).change, rowData(msft).prev),
+    createData('AMZN', rowData(amzn).price, rowData(amzn).change, rowData(amzn).prev),
+    createData('FB', rowData(fb).price, rowData(fb).change, rowData(fb).prev),
+    createData('GOOG', rowData(goog).price, rowData(goog).change, rowData(goog).prev),
   ];
-
-export default function SymbolTable(){
     return (
     <>
     <h1>I am rich!</h1>
+    <h1>{aapl.symbol}</h1>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 200 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Symbol</StyledTableCell>
             <StyledTableCell align="left">Price</StyledTableCell>
-            <StyledTableCell align="left">&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="left">&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="left">&nbsp;(g)</StyledTableCell>
+            <StyledTableCell align="left">Change</StyledTableCell>
+            <StyledTableCell align="left">Prev Close</StyledTableCell>
+            {/* <StyledTableCell align="left">&nbsp;(g)</StyledTableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -61,13 +89,14 @@ export default function SymbolTable(){
             <StyledTableRow key={row.symbol}>
               <StyledTableCell component="th" scope="row">
                   <Link href={{ pathname: '/stock/', query: { symbol: row.symbol }}}>
+                  
                     {row.symbol}
                   </Link>
               </StyledTableCell>
               <StyledTableCell align="left">{row.price}</StyledTableCell>
-              <StyledTableCell align="left">{row.a}</StyledTableCell>
-              <StyledTableCell align="left">{row.b}</StyledTableCell>
-              <StyledTableCell align="left">{row.c}</StyledTableCell>
+              <StyledTableCell className= {row.change >= 0 ?  'change1': 'change2'} align="left">{row.change} %</StyledTableCell>
+              <StyledTableCell align="left">{row.prev}</StyledTableCell>
+              {/* <StyledTableCell align="left">{row.c}</StyledTableCell> */}
             </StyledTableRow>
           ))}
         </TableBody>
