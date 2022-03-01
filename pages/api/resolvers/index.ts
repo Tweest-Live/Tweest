@@ -19,6 +19,7 @@ const createOptions = (method: Methods, url: string) : AxiosRequestConfig => {
     }
   };
 }
+
 export const resolvers = {
   Query: {
     getStocks: async () => {
@@ -44,8 +45,18 @@ export const resolvers = {
       } catch (error) {
         throw error;
       }
-    }
+    },
+    getLiveData: async() => {
+      try {
+
+      }
+      catch(error) {
+        throw error
+      }
+    },
   },
+
+};
   // Subscription: {
   //   getStocks: async () => {
   //     try {
@@ -74,4 +85,3 @@ export const resolvers = {
   //     }
   //   }
   // }
-};
