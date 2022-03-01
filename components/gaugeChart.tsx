@@ -57,7 +57,7 @@ const AccelDial = ({stocks}:any) => {
   };
 const sentiment = new Sentiment();
 
-let hashString = 'Cats evil'
+let hashString = 'Cats evil love'
 let result = sentiment.analyze(hashString);
 let words;
 if(result.words.length){
