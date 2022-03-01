@@ -7,22 +7,9 @@ export  const  typeDefs  =  gql`
       close: [Float]
     }
 
-    type StockSocket {
-      id: String
-      price: Float
-      time: String
-      exchange: String
-      quoteType: String
-      marketHours: String
-      changePercent: Float
-      dayVolume: Int
-      change: Float
-      priceHint: Int  
-    }
-
     type Query {
       getStocks: [Stock]
       getStock(symbol: String!): Stock
-      getLiveData: StockSocket
+      getLiveData: [Stock]
     }
 `
