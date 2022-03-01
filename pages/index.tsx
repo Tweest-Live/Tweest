@@ -4,9 +4,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import SymbolTable from '../components/symbolTable'
 import Navbar from '../components/Navbar'
-import GuageChart from '../components/gaugeChart'
+import GaugeChart from '../components/gaugeChart'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+
 
 const Home: NextPage = ({ stocks }: any) => {
   console.log('stocksdata',stocks)
@@ -24,7 +25,8 @@ const Home: NextPage = ({ stocks }: any) => {
         <h1 className={styles.title}>
             Welcome to <a href="https://nextjs.org">Tweest!</a>
         </h1>
-        <GuageChart stocks={stocks}/>
+       
+        
           <SymbolTable stocks={stocks}/>
         
 

@@ -9,6 +9,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -92,6 +94,7 @@ export default function SymbolTable({stocks}:any){
                   
                     {row.symbol}
                   </Link>
+                  
               </StyledTableCell>
               <StyledTableCell align="left">{row.price}</StyledTableCell>
               <StyledTableCell className= {row.change >= 0 ?  'change1': 'change2'} align="left">{row.change} %</StyledTableCell>
