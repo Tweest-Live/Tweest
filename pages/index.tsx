@@ -5,6 +5,7 @@ import SymbolTable from '../components/symbolTable'
 import Navbar from '../components/Navbar'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+import GetLiveData from "../components/live-data-model"
 
 
 const Home: NextPage = ({ stocks }: any) => {
@@ -24,6 +25,7 @@ const Home: NextPage = ({ stocks }: any) => {
           </h1>
           <SymbolTable stocks={stocks} />
         </main>
+        <GetLiveData/>
       </div>
     </div>
   );
