@@ -18,6 +18,7 @@
     "apexcharts": "^3.33.1",
     "apollo-server-micro": "^3.6.3",
     "axios": "^0.26.0",
+    "d3reactor": "0.0.13",
     "express": "^4.17.3",
     "graphql": "^16.3.0",
     "lodash": "^4.17.21",

@@ -1,7 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import { useRouter } from 'next/router';
 import GaugeChart from "react-gauge-chart";
+import Chart from './Chart'
 const Sentiment = require('sentiment');
+
+
+
 
 
 const AccelDial = ({stocks}:any) => {
@@ -86,4 +90,7 @@ const styles = {
   };
   
   export default AccelDial;
+  
+
+ 
 
