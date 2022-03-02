@@ -4,7 +4,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
-import GetLiveData from "../components/live-data-model"
+import GetLiveData from "../components/live-stock-model"
+import GetTweets from "../components/live-twitter-model"
 
 const Home: NextPage = ({ stocks }: any) => {
   return (
@@ -15,6 +16,8 @@ const Home: NextPage = ({ stocks }: any) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GetLiveData/>
+      <GetTweets symbol= "AAPL"/>
+
       <main className={styles.main}>{JSON.stringify(stocks)}</main>
     </div>
   );
