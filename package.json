@@ -24,7 +24,6 @@
     "micro-cors": "^0.1.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-d3-speedometer": "^1.0.2",
     "react-dom": "17.0.2",
     "react-gauge-chart": "^0.4.0",
     "sentiment": "^5.0.2"

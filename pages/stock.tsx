@@ -5,25 +5,6 @@ import Chart from '../components/Chart';
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
-export async function getStaticProps() {
-  const response = await client.query({
-    query: gql`
-      {
-        getStocks {
-          symbol
-          timestamp
-          close
-        }
-      }
-    `,
-  });
-  return {
-    props: {
-      stocks: response,
-    },
-  };
-}
-
 export default function Stock({ stocks }: any) {
 
     const [symbol, setSymbol] = useState('')
@@ -43,6 +24,24 @@ export default function Stock({ stocks }: any) {
         <Chart stocks={stocks}/>
         <p>{stocks.data.getStocks[1].symbol} from data,stocks </p>
         </>
-        
     )
+}
+
+export async function getStaticProps() {
+  const response = await client.query({
+    query: gql`
+      {
+        getStocks {
+          symbol
+          timestamp
+          close
+        }
+      }
+    `,
+  });
+  return {
+    props: {
+      stocks: response,
+    },
+  };
 }
