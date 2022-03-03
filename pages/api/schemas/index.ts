@@ -7,9 +7,16 @@ export  const  typeDefs  =  gql`
       close: [Float]
     }
 
+    type Tweet {
+      text: String 
+      username: String
+      created_at: String
+    }
+
     type Query {
       getStocks: [Stock]
       getStock(symbol: String!): Stock
       getLiveData: [Stock]
+      getTweets(symbol: String!): [Tweet]
     }
 `
