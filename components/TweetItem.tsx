@@ -5,6 +5,9 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Gauge from './gaugeChart';
+
+
 
 export default function OutlinedCard(props:any) {
   return (
@@ -18,6 +21,7 @@ export default function OutlinedCard(props:any) {
             <Typography variant="body2">
               {props.content}
             </Typography>
+            <Gauge content={props.content} user={props.user}/>
           </CardContent>
           <CardActions>
             <Button size="small">Learn More</Button>
