@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+.change1 {
+  color:green
+}
+.change2 {
+  color:red
+}
+

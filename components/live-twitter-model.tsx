@@ -7,7 +7,8 @@ interface Tweets {
 interface TweetVar {
   symbol: string
 }
- const GET_TWEETS = gql`
+
+const GET_TWEETS = gql`
  query GetLiveTweets($symbol: String!) {
     getTweets(symbol: $symbol) {
       text
@@ -20,6 +21,7 @@ interface TweetVar {
 export default function GetTweets({symbol} : TweetVar) {
   const { loading, error, data } = useQuery<Tweets[], TweetVar>(GET_TWEETS, {
     variables: {symbol},
+    notifyOnNetworkStatusChange:true,
     pollInterval: 60000,
   });
   if (loading) return <div>Loading</div>;
