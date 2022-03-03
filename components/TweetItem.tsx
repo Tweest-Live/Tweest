@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Gauge from './gaugeChart';
+import Grid from '@mui/material/Grid';
 
 
 
@@ -21,7 +22,9 @@ export default function OutlinedCard(props:any) {
             <Typography variant="body2">
               {props.content}
             </Typography>
-            <Gauge content={props.content} user={props.user}/>
+            <Grid   container spacing={0} direction="column" alignItems="end" justifyContent="right">
+              <Gauge content={props.content} user={props.user}/>
+            </Grid>
           </CardContent>
           <CardActions>
             <Button size="small">Learn More</Button>
