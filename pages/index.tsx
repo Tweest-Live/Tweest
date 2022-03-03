@@ -21,8 +21,11 @@ const Home: NextPage = ({ stocks }: any) => {
         </Head>
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Welcome toTweest!
+            Welcome to Tweest!
           </h1>
+          <h4>
+            click on a ticker to view detailed chart alongisde Twitter sentiments
+          </h4>
           <SymbolTable stocks={stocks} />
         </main>
         <GetLiveData/>
