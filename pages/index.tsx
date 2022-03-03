@@ -9,7 +9,6 @@ import GetLiveData from "../components/live-data-model"
 
 
 const Home: NextPage = ({ stocks }: any) => {
-  console.log('stocksdata', stocks)
   return (
     <div>
       <Navbar />

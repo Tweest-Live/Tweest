@@ -1,15 +1,13 @@
 import * as React from 'react';
-import Gauge from './gaugeChart';
-import GetLiveData from './live-data-model';
+import GetLiveData from './live-stock-model';
 
 
-export default function Chart({stocks}:any){
+export default function Chart(){
   return(
-    <>
-    <Gauge stocks={stocks}></Gauge>
+    <div>
     <GetLiveData/>
     
-    </>
+    </div>
   )
 }
 

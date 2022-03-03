@@ -21,7 +21,7 @@ export default function Stock({ stocks }: any) {
       <div className={styles.container}>
         <main className={styles.main}>
           <h1> Stock page for {symbol} </h1>
-          <Chart stocks={stocks} />
+          <Chart />
           <TweetList symbol={symbol} />
         </main>
       </div>
@@ -29,21 +29,4 @@ export default function Stock({ stocks }: any) {
   )
 }
 
-export async function getStaticProps() {
-  const response = await client.query({
-    query: gql`
-      {
-        getStocks {
-          symbol
-          timestamp
-          close
-        }
-      }
-    `,
-  });
-  return {
-    props: {
-      stocks: response,
-    },
-  };
-}
+

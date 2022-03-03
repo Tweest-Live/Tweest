@@ -63,6 +63,7 @@ export default function GetLiveData() {
     let seconds = "0" + date.getSeconds();
 
     // Will display time in 10:30:23 format
+    
     var formattedTime = hours + ":" + minutes.substring(-2) + ":" + seconds.substring(-2);
     return formattedTime;
   }

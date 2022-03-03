@@ -1,5 +1,4 @@
 import { useQuery, gql } from "@apollo/client";
-
 interface Tweets {
   text: string, 
   created_at: string, 
@@ -22,6 +21,7 @@ const GET_TWEETS = gql`
 export default function GetTweets({symbol} : TweetVar) {
   const { loading, error, data } = useQuery<Tweets[], TweetVar>(GET_TWEETS, {
     variables: {symbol},
+    notifyOnNetworkStatusChange:true,
     pollInterval: 60000,
   });
   if (loading) return <div>Loading</div>;

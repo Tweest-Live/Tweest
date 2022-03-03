@@ -54,7 +54,7 @@ export default function SymbolTable({ stocks }: any) {
     if (changeValue < 0) {
       change = "-$" + changeValue.toString().slice(1);
     } else {
-      change = "+$" + changeValue.toString().slice(1);
+      change = "$" + changeValue.toString();
     }
     obj.change = change;
     obj.changePercent = (
@@ -94,10 +94,10 @@ export default function SymbolTable({ stocks }: any) {
                   <Link href={{ pathname: "/stock/", query: { symbol: row.symbol } }}>{row.symbol}</Link>
                 </StyledTableCell>
                 <StyledTableCell align='left'>{row.price}</StyledTableCell>
-                <StyledTableCell className={Number(row.change) >= 0 ? "change1" : "change2"} align='left'>
+                <StyledTableCell className={Number(row.change) >= 0 ? "change2" : "change1"} align='left'>
                   {row.change}
                 </StyledTableCell>
-                <StyledTableCell className={Number(row.change) >= 0 ? "change1" : "change2"} align='left'>
+                <StyledTableCell className={Number(row.change) >= 0 ? "change2" : "change1"} align='left'>
                   {row.changePercent} %
                 </StyledTableCell>
                 <StyledTableCell align='left'>{row.prev}</StyledTableCell>
