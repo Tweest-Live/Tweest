@@ -76,8 +76,6 @@ export default function SymbolTable({ stocks }: any) {
   ];
   return (
     <>
-      <h1>I am rich!</h1>
-      <h1>{aapl.symbol}</h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 200 }} aria-label='customized table'>
           <TableHead>
